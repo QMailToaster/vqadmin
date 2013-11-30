@@ -110,16 +110,16 @@ make
 #-------------------------------------------------------------------------------
 %install
 #-------------------------------------------------------------------------------
-rm -rf %{buildroot}
-mkdir -p %{buildroot}%{vqadmdir}
-mkdir -p %{buildroot}%{vqadmdir}/html
-mkdir -p %{buildroot}%{vqadmdir}/docs
+%{__rm} -rf  %{buildroot}
+%{__mkdir_p} %{buildroot}%{vqadmdir}
+%{__mkdir_p} %{buildroot}%{vqadmdir}/html
+%{__mkdir_p} %{buildroot}%{vqadmdir}/docs
 
-install -m644 html/*        %{buildroot}%{vqadmdir}/html/
-install -m644 html/en       %{buildroot}%{vqadmdir}/html/en-us
-install -Dp vqadmin         %{buildroot}%{basedir}/cgi-bin/vqadmin/toaster.vqadmin
-install -Dp vqadmin.acl     %{buildroot}%{basedir}/cgi-bin/vqadmin/vqadmin.acl
-install -Dp vqadmin.module %{buildroot}%{basedir}/include/vqadmin.module
+%{__install}     html/*   %{buildroot}%{vqadmdir}/html/.
+%{__install}     html/en  %{buildroot}%{vqadmdir}/html/en-us
+%{__install} -Dp vqadmin  %{buildroot}%{basedir}/cgi-bin/vqadmin/toaster.vqadmin
+%{__install} -Dp vqadmin.acl  %{buildroot}%{basedir}/cgi-bin/vqadmin/.
+%{__install} -Dp %{_sourcedir}/vqadmin.module  %{buildroot}%{basedir}/include/.
 
 #-------------------------------------------------------------------------------
 %clean
