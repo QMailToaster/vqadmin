@@ -119,7 +119,7 @@ make
 %{__install}     html/en  %{buildroot}%{vqadmdir}/html/en-us
 %{__install} -Dp vqadmin  %{buildroot}%{basedir}/cgi-bin/vqadmin/toaster.vqadmin
 %{__install} -Dp vqadmin.acl  %{buildroot}%{basedir}/cgi-bin/vqadmin
-%{__install} -Dp %{_sourcedir}/vqadmin.module  %{buildroot}%{basedir}/include
+%{__install} -Dp %{_sourcedir}/vqadmin.module  %{buildroot}%{basedir}/include/
 
 #-------------------------------------------------------------------------------
 %clean
