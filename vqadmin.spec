@@ -13,12 +13,12 @@ Patch2:		vqadmin.chrome.patch
 Patch3:		vqadmin.html.patch
 Patch4:		vqadmin.vpopmail.devel.patch
 Patch5:		vqadmin.vpopmail.ver.patch
-BuildRequires:	vpopmail-devel
+BuildRequires:	libvpopmail-static
 BuildRequires:	mysql-devel >= 5.0.22
 BuildRequires:	perl
+Requires:	control-panel
 Requires:	mysql >= 5.0.22
 Requires:	vpopmail
-Requires:	control-panel
 Obsoletes:	vqadmin-toaster
 BuildRoot:      %{_topdir}/BUILDROOT/%{name}-%{version}-%{release}.%{_arch}
 
