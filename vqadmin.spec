@@ -52,16 +52,16 @@ authentication based smtp relay control, imap server and sqwebmail access.
 %patch4 -p1
 %patch5 -p1
 
-# Patch th templates
+# Patch the templates
 #-------------------------------------------------------------------------------
 [ -f %{_tmppath}/patch_templates ] && rm -f %{_tmppath}/patch_templates
 #
 %{__cat} << !EOF! >>%{_tmppath}/patch_templates
 #!/bin/sh
 
-ls $RPM_BUILD_DIR/%{name}-%{version}/*.c >  %{_tmppath}/c.list
-ls $RPM_BUILD_DIR/%{name}-%{version}/*.h >> %{_tmppath}/c.list
-ls $RPM_BUILD_DIR/%{name}-%{version}/html/*.html > %{_tmppath}/html.list
+ls %{_builddir}/%{name}-%{version}/*.c        >  %{_tmppath}/c.list
+ls %{_builddir}/%{name}-%{version}/*.h        >> %{_tmppath}/c.list
+ls %{_builddir}/%{name}-%{version}/html/*.html > %{_tmppath}/html.list
 
 # Correggo i path nei riferimenti c
 for i in \`cat %{_tmppath}/c.list\`; do
@@ -119,8 +119,7 @@ make
 %{__install}     html/en  %{buildroot}%{vqadmdir}/html/en-us
 %{__install} -Dp vqadmin  %{buildroot}%{basedir}/cgi-bin/vqadmin/toaster.vqadmin
 %{__install} -Dp vqadmin.acl  %{buildroot}%{basedir}/cgi-bin/vqadmin
-%{__install} -Dp %{_sourcedir}/vqadmin.module \
-                          %{buildroot}%{basedir}/include/vqadmin.module
+%{__install} -Dp %{SOURCE1}   %{buildroot}%{basedir}/include/vqadmin.module
 
 #-------------------------------------------------------------------------------
 %clean
