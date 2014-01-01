@@ -1,26 +1,28 @@
-Name:           vqadmin
-Summary:	Web Administration for qmail-toaster
-Version:	2.3.7
-Release:	0%{?dist}
-License:	GPL
-Group:		Networking/Other
-URL:		http://inter7.com/index.php?page=vqadmin
-Source:		http://inter7.com/vqadmin/%{name}-%{version}.tar.gz
-Source1:	vqadmin.module
-Patch0:		vqadmin.template.patch
-Patch1:		vqadmin.valias.patch
-Patch2:		vqadmin.chrome.patch
-Patch3:		vqadmin.html.patch
-Patch4:		vqadmin.vpopmail.devel.patch
-Patch5:		vqadmin.vpopmail.ver.patch
-BuildRequires:	libvpopmail-static
-BuildRequires:	mysql-devel >= 5.0.22
-BuildRequires:	perl
-Requires:	control-panel
-Requires:	mysql >= 5.0.22
-Requires:	vpopmail
-Obsoletes:	vqadmin-toaster
-BuildRoot:      %{_topdir}/BUILDROOT/%{name}-%{version}-%{release}.%{_arch}
+Name:      vqadmin
+Summary:   Web Administration for qmail-toaster
+Version:   2.3.7
+Release:   0%{?dist}
+License:   GPL
+Group:     Networking/Other
+Vendor:    QmailToaster
+Packager:  Eric Shubert <qmt-build@datamatters.us>
+URL:       http://inter7.com/index.php?page=vqadmin
+Source:    http://inter7.com/vqadmin/%{name}-%{version}.tar.gz
+Source1:   vqadmin.module
+Patch0:    vqadmin.template.patch
+Patch1:    vqadmin.valias.patch
+Patch2:    vqadmin.chrome.patch
+Patch3:    vqadmin.html.patch
+Patch4:    vqadmin.vpopmail.devel.patch
+Patch5:    vqadmin.vpopmail.ver.patch
+BuildRequires: libvpopmail-static
+BuildRequires: mysql-devel >= 5.0.22
+BuildRequires: perl
+Requires:  control-panel
+Requires:  mysql >= 5.0.22
+Requires:  vpopmail
+Obsoletes: vqadmin-toaster
+BuildRoot: %{_topdir}/BUILDROOT/%{name}-%{version}-%{release}.%{_arch}
 
 %define apacheuser    apache
 %define apachegroup   apache
