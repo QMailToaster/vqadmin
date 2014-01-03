@@ -15,6 +15,7 @@ Patch2:    vqadmin.chrome.patch
 Patch3:    vqadmin.html.patch
 Patch4:    vqadmin.vpopmail.devel.patch
 Patch5:    vqadmin.vpopmail.ver.patch
+Patch6:    vqadmin-dom-defaults.patch
 BuildRequires: libvpopmail-static
 BuildRequires: mysql-devel >= 5.0.22
 BuildRequires: perl
@@ -53,6 +54,7 @@ authentication based smtp relay control, imap server and sqwebmail access.
 %patch3 -p0
 %patch4 -p1
 %patch5 -p1
+%patch6 -p1
 
 # Patch the templates
 #-------------------------------------------------------------------------------
